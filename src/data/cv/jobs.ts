@@ -1,4 +1,4 @@
-import { SKILL } from "./skills";
+import { SKILL } from "./skill";
 
 export type Job = {
   date: string;
@@ -8,6 +8,7 @@ export type Job = {
   role: string;
   skills: string[];
 };
+
 export const JOBS: Job[] = [
   {
     date: "2020-24",

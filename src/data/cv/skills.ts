@@ -12,17 +12,12 @@ import {
   PiFigmaLogoDuotone as IconFigma,
 } from "react-icons/pi";
 import { IconType } from "react-icons";
+import { SIDES } from "./side";
+import { SKILL } from "./skill";
 
-export const SKILLS = () => [...new Set(JOBS.map((job) => job.skills).flat())];
-
-export enum SKILL {
-  NEXTJS = "next.js",
-  REACTQUERY = "react query",
-  ANGULAR = "angular",
-  FIGMA = "figma",
-  CHAKRA = "chakra-ui",
-  PANDA = "panda-ui",
-}
+export const SKILLS = () => [
+  ...new Set([...SIDES, ...JOBS].map((job) => job.skills).flat()),
+];
 
 export const SKILL_MAP: [string, IconType][] = [
   [SKILL.NEXTJS, IconNext],
