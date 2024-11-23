@@ -5,4 +5,11 @@ export enum SKILL {
   FIGMA = "figma",
   CHAKRA = "chakra-ui",
   PANDA = "panda-ui",
+  WAGMI = "wagmi.sh",
+  RAINBOWKIT = "rainbowkit",
+  REACT = "react",
+  DCL = "decentraland sdk",
+  THREE = "three.js",
+  SVELTE = "svelte",
+  BLENDER = "blender",
 }

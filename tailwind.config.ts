@@ -16,7 +16,7 @@ export default {
       },
       colors: {
         background: "var(--background)",
-        foreground: "var(--background)",
+        foreground: "var(--foreground)",
         highlight: "var(--highlight)",
         shadow: "var(--shadow)",
       },

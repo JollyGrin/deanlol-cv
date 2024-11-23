@@ -14,7 +14,7 @@ const sub = localFont({
 });
 
 const body = localFont({
-  src: "./fonts/Amiko-Regular.ttf",
+  src: "./fonts/GeistVF.woff",
   variable: "--font-body",
   weight: "400",
 });

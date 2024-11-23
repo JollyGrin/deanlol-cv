@@ -15,7 +15,7 @@ export const JOBS: Job[] = [
     name: "Hyfen",
     logo: "logos/hyfen.jpeg",
     pitch:
-      "ecosystem infrastructure that enables up-to-date data and streamlined processes, while greatly reducing operating costs and maintaining the privacy of individual ecosystem partners",
+      "Ecosystem infrastructure: realtime data and streamlined processes, while greatly reducing operating costs and maintaining the privacy of individual ecosystem partners.",
     role: "front-end",
     skills: [
       SKILL.NEXTJS,
@@ -32,6 +32,15 @@ export const JOBS: Job[] = [
     pitch:
       "Crowdfund sustainable energy infrastructure (windmills, solar panels) and lower your energy bill from your yields.",
     role: "co-founder",
+    skills: [SKILL.FIGMA, SKILL.REACT],
+  },
+  {
+    date: "2015-17",
+    name: "Blockchain Education Network",
+    logo: "logos/ben.png",
+    pitch:
+      "nonprofit organization dedicated to forming a robust network of student groups for blockchain education, development, and innovation.",
+    role: "exec director",
     skills: [SKILL.FIGMA],
   },
 ];

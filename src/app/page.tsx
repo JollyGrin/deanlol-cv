@@ -1,4 +1,5 @@
 import { JobRecords } from "@/components/molecules/JobRecord";
+import { SideProjects } from "@/components/molecules/SideProject";
 import { SkillTags } from "@/components/molecules/SkillTag";
 
 export default function Home() {
@@ -9,9 +10,9 @@ export default function Home() {
           <h1 className="text-7xl">dean</h1>
         </div>
 
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center min-h-[20vh]">
           <h4 className="underline">dabbles in</h4>
-          <div className="bg-highlight rounded p-2 flex flex-wrap gap-2 w-full">
+          <div className="bg-highlight rounded-lg p-4 flex flex-wrap gap-2 w-full">
             <SkillTags />
           </div>
         </div>
@@ -31,18 +32,3 @@ export default function Home() {
     </main>
   );
 }
-
-const SideProjects = () => {
-  return (
-    <div className="w-full grid grid-cols-2 gap-1">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div
-          key={i + "dhsjka"}
-          className="w-full bg-gray-400 rounded min-h-[10rem]"
-        >
-          j
-        </div>
-      ))}
-    </div>
-  );
-};
