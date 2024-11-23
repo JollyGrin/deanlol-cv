@@ -25,9 +25,19 @@ export default function Home() {
 
         <div className="w-full flex flex-col items-center">
           <h4 className="underline">side projects</h4>
-          <JobRecords />
+          <SideProjects />
         </div>
       </div>
     </main>
   );
 }
+
+const SideProjects = () => {
+  return (
+    <div className="w-full grid grid-cols-2 gap-1">
+      {Array.from({ length: 6 }).map((block, i) => (
+        <div className="w-full bg-gray-400 rounded min-h-[10rem]">j</div>
+      ))}
+    </div>
+  );
+};

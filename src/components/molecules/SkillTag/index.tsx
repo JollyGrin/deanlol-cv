@@ -1,15 +1,21 @@
-import { SKILLS } from "@/data/cv/jobs";
+import { SKILL_MAP, SKILLS } from "@/data/cv/skills";
+import { IconType } from "react-icons";
 
-import { TbBrandNextjs as IconNext } from "react-icons/tb";
+const SkillTag = ({ skill }: { skill: string }) => {
+  const Icon: IconType | undefined = SKILL_MAP.find((record) => {
+    const [key] = record;
+    return key.toString().toLowerCase() === skill.toLowerCase();
+  })?.[1];
 
-const SkillTag = ({ skill }: { skill: string }) => (
-  <div className="flex bg-shadow p-1 items-center gap-1 text-highlight">
-    <IconNext color="inherit" fontSize="1.25rem" />
-    <p>{skill}</p>
-  </div>
-);
+  return (
+    <div className="flex bg-shadow p-1 items-center gap-1 text-highlight">
+      {Icon ? <Icon /> : ""}
+      <p>{skill}</p>
+    </div>
+  );
+};
 
 export const SkillTags = () =>
-  SKILLS.map((skill, i) => (
+  SKILLS().map((skill, i) => (
     <SkillTag key={skill + i + "skillstag"} {...{ skill }} />
   ));

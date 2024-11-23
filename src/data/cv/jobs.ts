@@ -1,3 +1,5 @@
+import { SKILL } from "./skills";
+
 export type Job = {
   date: string;
   name: string;
@@ -14,7 +16,13 @@ export const JOBS: Job[] = [
     pitch:
       "ecosystem infrastructure that enables up-to-date data and streamlined processes, while greatly reducing operating costs and maintaining the privacy of individual ecosystem partners",
     role: "front-end",
-    skills: ["next.js", "tanstack", "chakra-ui", "panda-ui", "angular"],
+    skills: [
+      SKILL.NEXTJS,
+      SKILL.REACTQUERY,
+      SKILL.CHAKRA,
+      SKILL.PANDA,
+      SKILL.ANGULAR,
+    ],
   },
   {
     date: "2017-2019",
@@ -23,8 +31,6 @@ export const JOBS: Job[] = [
     pitch:
       "Crowdfund sustainable energy infrastructure (windmills, solar panels) and lower your energy bill from your yields.",
     role: "co-founder",
-    skills: ["figma"],
+    skills: [SKILL.FIGMA],
   },
 ];
-
-export const SKILLS = [...new Set(JOBS.map((job) => job.skills).flat())];
