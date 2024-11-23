@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #ecdfcc;
-  --foreground: #da8359;
-  --highlight: #fcfaee;
-  --shadow: #a5b68d;
+  /* --background: #000b58; */
+  /* --foreground: #fff4b7; */
+  /* --highlight: #006a67; */
+  /* --shadow: #003161; */
+  --background: #272829;
+  --foreground: #fff6e0;
+  --highlight: #d8d9da;
+  --shadow: #61677a;
   --font-header: "Abril Fatface", sans-serif;
   --font-sub: "Aclonica", sans-serif;
   --font-body: "Amiko", sans-serif;

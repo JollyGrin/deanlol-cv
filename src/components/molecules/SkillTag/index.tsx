@@ -8,7 +8,7 @@ const SkillTag = ({ skill }: { skill: string }) => {
   })?.[1];
 
   return (
-    <div className="flex bg-shadow py-1 px-3 items-center gap-1 text-highlight rounded-full hover:opacity-75">
+    <div className="flex bg-shadow py-1 px-3 items-center gap-1 text-foreground rounded-full hover:opacity-75">
       {Icon ? <Icon /> : ""}
       <p>{skill}</p>
     </div>

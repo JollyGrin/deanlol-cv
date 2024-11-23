@@ -1,7 +1,7 @@
 import { Job } from "./jobs";
 import { SKILL } from "./skill";
 
-type Side = Job & { video?: string };
+export type Side = Job & { video?: string };
 export const SIDES: Side[] = [
   {
     date: "2019-now",
@@ -9,7 +9,7 @@ export const SIDES: Side[] = [
     logo: "logos/innkeeper.png",
     pitch: "Metaverse club, streaming artists from across the world",
     role: "founder",
-    video: "thumbvideos/inn.webp",
+    // video: "thumbvideos/inn.webp",
     skills: [
       SKILL.NEXTJS,
       SKILL.REACTQUERY,
@@ -19,5 +19,22 @@ export const SIDES: Side[] = [
       SKILL.DCL,
       SKILL.BLENDER,
     ],
+  },
+
+  {
+    date: "",
+    name: "Unbrewed",
+    logo: "logos/unbrewed.png",
+    pitch: "Play Unmatched (boardgame) with 1000+ variant decks online",
+    role: "founder",
+    skills: [SKILL.NEXTJS, SKILL.REACTQUERY, SKILL.CHAKRA],
+  },
+  {
+    date: "",
+    name: "Spells Bar",
+    logo: "logos/spellsbar.png",
+    pitch: "Play Sorcery TCG online against friends & draft",
+    role: "founder",
+    skills: [SKILL.NEXTJS, SKILL.REACTQUERY, SKILL.CHAKRA],
   },
 ];
