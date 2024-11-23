@@ -10,13 +10,21 @@ const JobRecord = (props: Job) => {
           src={props.logo}
           className="w-[3rem] h-[3rem] rounded-full overflow-hidden"
         />
-        <div className="">
+        <div className="flex flex-col gap-2">
           <p className="font-bold text-2xl">{props.name}</p>
           <p className="break-all">{props.pitch}</p>
-          <div className="flex font-mono items-center gap-2">
-            <p className="bg-highlight py-2 px-4 rounded-full">{props.role}</p>
+          <div className="flex font-mono items-center gap-0 flex-wrap tracking-tighter">
+            <p className="bg-highlight py-2 px-4 rounded-full mr-2">
+              {props.role}
+            </p>
             {props.skills.map((skill, i) => (
-              <p key={skill + i + props.name}>next.js</p>
+              <>
+                <p key={skill + i + props.name}>{skill}</p>
+
+                {i < props.skills.length - 1 && (
+                  <span className="mx-2"> *</span>
+                )}
+              </>
             ))}
           </div>
         </div>
