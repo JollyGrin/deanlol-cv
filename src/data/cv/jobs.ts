@@ -13,7 +13,7 @@ export const JOBS: Job[] = [
     logo: "logos/hyfen.jpeg",
     pitch: "lorem ipsum",
     role: "front-end",
-    skills: ["next.js"],
+    skills: ["next.js", "tanstack", "chakra-ui", "panda-ui", "angular"],
   },
   {
     date: "2017-2019",
