@@ -35,8 +35,13 @@ export default function Home() {
 const SideProjects = () => {
   return (
     <div className="w-full grid grid-cols-2 gap-1">
-      {Array.from({ length: 6 }).map((block, i) => (
-        <div className="w-full bg-gray-400 rounded min-h-[10rem]">j</div>
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div
+          key={i + "dhsjka"}
+          className="w-full bg-gray-400 rounded min-h-[10rem]"
+        >
+          j
+        </div>
       ))}
     </div>
   );

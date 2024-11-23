@@ -13,7 +13,10 @@ const JobRecord = (props: Job) => {
         <div className="flex flex-col gap-2">
           <p className="font-bold text-2xl">{props.name}</p>
           <p className="break-all">{props.pitch}</p>
-          <div className="flex font-mono items-center gap-0 flex-wrap tracking-tighter">
+          <div
+            key={props.name}
+            className="flex font-mono items-center gap-0 flex-wrap tracking-tighter"
+          >
             <p className="bg-highlight py-2 px-4 rounded-full mr-2">
               {props.role}
             </p>
