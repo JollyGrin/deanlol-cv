@@ -18,7 +18,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:flex md:gap-5 md:justify-center max-w-[900px] mx-auto">
+      <div className="md:flex md:gap-10 md:justify-center max-w-[900px] mx-auto">
         <div className="w-full flex flex-col items-center">
           <h4 className="underline mb-2">worked at</h4>
           <JobRecords />
