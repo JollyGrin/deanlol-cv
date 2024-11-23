@@ -1,6 +1,5 @@
 import { JobRecords } from "@/components/molecules/JobRecord";
 import { SkillTags } from "@/components/molecules/SkillTag";
-import { SKILLS } from "@/data/cv/jobs";
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
 
       <div className="w-full flex flex-col items-center">
         <h4 className="underline">dabbles in</h4>
-        <div className="bg-white rounded p-2 flex flex-wrap gap-2">
+        <div className="bg-highlight rounded p-2 flex flex-wrap gap-2 w-full">
           <SkillTags />
         </div>
       </div>
