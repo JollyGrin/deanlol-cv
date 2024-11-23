@@ -8,9 +8,17 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        header: "var(--font-header)",
+        sub: "var(--font-sub)",
+        body: "var(--font-body)",
+        mono: "var(--font-mono)",
+      },
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
+        foreground: "var(--background)",
+        highlight: "var(--highlight)",
+        shadow: "var(--shadow)",
       },
     },
   },
