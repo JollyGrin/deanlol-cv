@@ -17,17 +17,17 @@ const JobRecord = (props: Job) => {
             key={props.name}
             className="flex font-mono items-center gap-0 flex-wrap tracking-tighter"
           >
-            <p className="bg-shadow py-2 px-4 rounded-full mr-2">
+            <p className="bg-shadow py-0.25 px-4 rounded-full mr-2">
               {props.role}
             </p>
             {props.skills.map((skill, i) => (
-              <>
-                <p key={skill + i + props.name}>{skill}</p>
+              <span key={skill + i + props.name} className="text-sm opacity-70">
+                {skill}
 
                 {i < props.skills.length - 1 && (
                   <span className="mx-2"> *</span>
                 )}
-              </>
+              </span>
             ))}
           </div>
         </div>

@@ -2,6 +2,8 @@ import { JOBS } from "./jobs";
 
 import { IconType } from "react-icons";
 import { TbBrandNextjs as IconNext } from "react-icons/tb";
+
+import { TbBrandGolang as IconGo } from "react-icons/tb";
 import {
   SiReactquery as IconReactQuery,
   SiChakraui as IconChakra,
@@ -11,6 +13,10 @@ import {
   SiDecentraland as IconDecentraland,
   SiThreedotjs as IconThree,
   SiSvelte as IconSvelte,
+  SiBlender as IconBlender,
+  SiTailwindcss as IconTailwind,
+  SiEthereum as IconEthereum,
+  SiSolana as IconSolana,
 } from "react-icons/si";
 
 import { LuRainbow as IconRainbowKit } from "react-icons/lu";
@@ -40,4 +46,9 @@ export const SKILL_MAP: [string, IconType][] = [
   [SKILL.DCL, IconDecentraland],
   [SKILL.THREE, IconThree],
   [SKILL.SVELTE, IconSvelte],
+  [SKILL.BLENDER, IconBlender],
+  [SKILL.GO, IconGo],
+  [SKILL.TAILWIND, IconTailwind],
+  [SKILL.ETH, IconEthereum],
+  [SKILL.SOL, IconSolana],
 ];

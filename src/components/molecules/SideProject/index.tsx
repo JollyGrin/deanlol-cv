@@ -1,8 +1,9 @@
 "use client";
 
-import { Job } from "@/data/cv/jobs";
 import { Side, SIDES } from "@/data/cv/side";
-import { useRef, useState } from "react";
+import Link from "next/link";
+
+import { GoArrowUpRight as IconLink } from "react-icons/go";
 
 export const SideProjects = () => {
   return (
@@ -16,43 +17,30 @@ export const SideProjects = () => {
 
 const SideProject = (job: Side) => {
   return (
-    <div className="relative">
-      <div
-        className="relative w-full rounded-lg flex flex-col gap-2 hover:scale-110 hover:z-50 transition-all"
-        style={{
-          backgroundImage: `url("${job.video}")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+    <div className="grid grid-cols-[1fr_8fr]">
+      <img src={job.logo} alt="logo" className="w-[2rem] h-[2rem]" />
+      <div className="flex flex-col">
+        <Link href={job.url ?? "#"}>
+          <div className="flex gap-x-2 group cursor-pointer">
+            <p className="text-xl font-bold">{job.name}</p>
+            <IconLink className="group-hover:translate-x-2 group-hover:translate-y-[-0.25rem] transition-all" />
+          </div>
+        </Link>
+        <p>{job.pitch}</p>
+
         <div
-          className={`rounded-lg h-full flex flex-col ${job.video ? "text-white bg-gradient-to-b from-indigo-400" : "text-foreground"}`}
+          key={job.name + "sideskills"}
+          className="flex flex-wrap text-sm font-mono opacity-70"
         >
-          <div className="flex items-center text-xl font-bold font-mono">
-            {job.logo === "" ? (
-              <div className="w-[2rem] h-[2rem]" />
-            ) : (
-              <img src={job.logo} alt="logo" className="w-[2rem] h-[2rem]" />
-            )}
-            <p>{job.name}</p>
-          </div>
-          <div className="">
-            <div className="py-2">
-              <p>{job.pitch}</p>
-            </div>
-            <div className="flex flex-wrap">
-              {job.skills.map((skill, index) => {
-                const isNotLast = index < job.skills.length - 1;
-                return (
-                  <>
-                    <p key={skill + index + job.name}>{skill}</p>
-                    {isNotLast && <span className="mx-2"> *</span>}
-                  </>
-                );
-              })}
-            </div>
-          </div>
+          {job.skills.map((skill, index) => {
+            const isNotLast = index < job.skills.length - 1;
+            return (
+              <span key={skill + "span" + index + job.name}>
+                <span>{skill}</span>
+                {isNotLast && <span className="mx-1"> *</span>}
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>

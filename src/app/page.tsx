@@ -7,7 +7,10 @@ export default function Home() {
     <main className="px-4 flex flex-col gap-8">
       <div className="max-w-[450px] mx-auto">
         <div className="grid place-items-center h-[15vh]">
-          <h1 className="text-5xl">dean</h1>
+          <div className="flex flex-col gap-2">
+            <h1 className="text-5xl">dean</h1>
+            <p>design, 3d, web</p>
+          </div>
         </div>
 
         <div className="w-full flex flex-col items-center min-h-[20vh]">
