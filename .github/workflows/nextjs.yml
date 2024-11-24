@@ -59,7 +59,7 @@ jobs:
         run: pnpm next build
 
       - name: Debug Output Directory
-        run: ls -la ./out
+        run: ls -la
 
       # - name: Run postbuild script
       #   run: pnpm node lib/buildTools/prefixFonts.js
