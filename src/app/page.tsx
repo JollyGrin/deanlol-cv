@@ -37,8 +37,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:flex md:gap-10 md:justify-center max-w-[900px] mx-auto">
-        <div className="w-full flex flex-col items-center">
+      <div className="flex flex-col md:flex-row gap-10 md:justify-center max-w-[900px] mx-auto">
+        <div className="w-full flex flex-col items-center order-last md:order-first">
           <h4 className="underline mb-2">worked at</h4>
           <JobRecords />
         </div>
