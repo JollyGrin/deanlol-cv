@@ -31,6 +31,7 @@ export const JOBS: Job[] = [
     date: "2017-2019",
     name: "NestEgg",
     logo: "logos/nestegg.jpeg",
+    url: "https://www.youtube.com/watch?v=KPsXJ7VMdJM",
     pitch:
       "Crowdfund sustainable energy infrastructure (windmills, solar panels) and lower your energy bill from your yields.",
     role: "co-founder",
@@ -39,6 +40,7 @@ export const JOBS: Job[] = [
   {
     date: "2015-17",
     name: "Blockchain Education Network",
+    url: "https://youtu.be/Jj_DVQ-70lc?si=rJLxP_XOCBSvmrfo&t=643",
     logo: "logos/ben.png",
     pitch:
       "nonprofit organization dedicated to forming a robust network of student groups for blockchain education, development, and innovation.",

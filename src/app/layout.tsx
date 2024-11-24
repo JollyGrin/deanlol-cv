@@ -27,7 +27,7 @@ const mono = localFont({
 
 export const metadata: Metadata = {
   title: "cv: dean.lol",
-  description: "design, 3d, web",
+  description: "web, design, 3d",
 };
 
 export default function RootLayout({

@@ -9,7 +9,7 @@ export default function Home() {
         <div className="grid place-items-center h-[15vh]">
           <div className="flex flex-col gap-2">
             <h1 className="text-5xl">dean</h1>
-            <p>design, 3d, web</p>
+            <p>web, design, 3d</p>
           </div>
         </div>
 
