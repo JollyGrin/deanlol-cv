@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   // Required for GitHub Pages deployment
-  basePath: process.env.NODE_ENV === "production" ? "/your-repo-name" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/deanlol-cv" : "",
 };
 
 export default nextConfig;
