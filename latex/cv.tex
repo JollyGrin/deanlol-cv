@@ -1,0 +1,445 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage[svgnames]{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{calc}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{xparse} 
+
+\hypersetup{
+    pdftitle={Resume - Ahsan Fazal},
+    pdfauthor={Ahsan Fazal},
+    pdfsubject={Software Architect \& Cloud Infrastructure Engineer},
+    pdfkeywords={software architect, cloud infrastructure, engineering},
+    pdfcreator={LaTeX},
+    pdfproducer={pdfTeX}
+}
+
+% -----------------------------
+% Design Tokens
+% -----------------------------
+
+% Colors (using Apple's SF palette as inspiration)
+\definecolor{textPrimary}{HTML}{000000}     % Label Color (Primary)
+\definecolor{textSecondary}{HTML}{3C3C3C}   % Label Color (Secondary)
+\definecolor{textTertiary}{HTML}{6C6C6C}    % Label Color (Tertiary)
+\definecolor{divider}{HTML}{E5E5E5}         % Separator Color
+\definecolor{linkColor}{HTML}{0366D6}       % GitHub-style blue for links
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkColor,
+    linkcolor=linkColor
+}
+
+% Base unit for consistent spacing (1pt = 1/72.27 inch)
+\newlength{\baseunit}
+\setlength{\baseunit}{8pt}  % Base spacing unit
+
+
+% Spacing scale
+\newcommand{\spacingxxs}{\vspace{0.25\baseunit}}  % 2pt
+\newcommand{\spacingxs}{\vspace{0.5\baseunit}}    % 4pt
+\newcommand{\spacingsm}{\vspace{\baseunit}}       % 8pt
+\newcommand{\spacingmd}{\vspace{2\baseunit}}      % 16pt
+\newcommand{\spacinglg}{\vspace{3\baseunit}}      % 24pt
+\newcommand{\spacingxl}{\vspace{4\baseunit}}      % 32pt
+\newcommand{\companySpace}{\vspace{1.25\baseunit}}
+\newcommand{\subtitleSpace}{\vspace{-1.25\baseunit}}
+\newcommand{\roleSpace}{\vspace{0.75\baseunit}}
+
+% -----------------------------
+% Typography System
+% -----------------------------
+
+% Font setup based on Apple's New York guidelines
+\setmainfont{New York Small}[
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    UprightFeatures={RawFeature={+ss01,+ss02,+ss03}},
+    BoldFeatures={RawFeature={+ss01,+ss02,+ss03}},
+    ItalicFeatures={RawFeature={+ss01,+ss02,+ss03}},
+    BoldItalicFeatures={RawFeature={+ss01,+ss02,+ss03}}
+]
+
+\newfontfamily\displayfont{New York Large}[
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    UprightFeatures={RawFeature={+ss01,+ss02,+ss03}},
+    BoldFeatures={RawFeature={+ss01,+ss02,+ss03}}
+]
+
+\newfontfamily\mediumfont{New York Medium}[
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    UprightFeatures={RawFeature={+ss01,+ss02,+ss03}},
+    BoldFeatures={RawFeature={+ss01,+ss02,+ss03}}
+]
+
+% -----------------------------
+% Typography System
+% -----------------------------
+
+\newcommand{\displayOne}[1]{{\displayfont\fontsize{16}{16}\selectfont #1}}    % Large Title
+\newcommand{\displayTwo}[1]{{\displayfont\fontsize{16}{16}\selectfont #1}}    % Title 1
+\newcommand{\headingOne}[1]{{\displayfont\fontsize{14}{14}\selectfont #1}}    % Title 2
+\newcommand{\headingTwo}[1]{{\displayfont\fontsize{12}{12}\selectfont #1}}    % Title 3
+\newcommand{\headingThree}[1]{{\fontsize{8}{8}\textbf{\selectfont #1}}}       % Headline
+\newcommand{\bodyLarge}[1]{{\fontsize{9}{9}\selectfont #1}}                   % Body Large
+\newcommand{\bodyDefault}[1]{{\fontsize{8}{8}\selectfont #1}}                 % Body
+\newcommand{\bodySmall}[1]{{\fontsize{8}{8}\selectfont #1}}                   % Footnote
+
+% -----------------------------
+% Layout Configuration
+% -----------------------------
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baseunit}
+\linespread{1.1}
+\renewcommand{\arraystretch}{1.15}
+
+% -----------------------------
+% Component Styles
+% -----------------------------
+
+\newcommand{\summary}[1]{%
+    {\bodyDefault{\setlength{\parskip}{0.5\baseunit}%
+    \setlength{\baselineskip}{1.4\baseunit}%
+    #1}}%
+    \spacingxs
+}
+
+\newcommand{\company}[3][]{%
+    {\headingThree{\textcolor{textPrimary}{#2}}}%
+    \hfill{\bodySmall{\textcolor{textTertiary}{#3}}}\par
+    \ifx\relax#1\relax\else
+        \subtitleSpace
+        {\bodySmall{\textcolor{textTertiary}{#1}}}
+    \fi
+    \vspace{-0.75\baseunit}}
+
+\newcommand{\resumeHeader}[3]{%
+    \begin{minipage}[c]{0.5\textwidth}
+        {\displayOne{\textcolor{textPrimary}{#1}}}\\
+        {\bodyLarge{\textcolor{textSecondary}{#2}}}%
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.5\textwidth}
+        \raggedleft
+        {\bodySmall{#3}}%
+    \end{minipage}
+}
+
+\newcommand{\customDivider}{%
+    \spacingsm
+    {\color{divider}\hrule height 0.5pt}%
+    \spacingsm
+}
+
+\newcommand{\sectionHeading}[1]{%
+    \customDivider
+    {\headingTwo{\textcolor{textPrimary}{#1}}}%
+    \spacingxxs
+}
+
+\newenvironment{customItemize}{%
+    \begin{itemize}[
+        leftmargin=1.5\baseunit,
+        itemsep=0\baseunit,
+        parsep=0pt,
+        topsep=0\baseunit,
+        label={\textcolor{textPrimary}{\small\textbullet}}]%
+}{%
+    \end{itemize}}
+
+\NewDocumentCommand{\role}{m m m o}{%
+    {\bodyDefault{\textcolor{textSecondary}{\textit{#1}}}}%
+    \hfill{\bodySmall{\textcolor{textTertiary}{\textit{#2 -- #3}}}}%
+    \IfValueT{#4}{%
+        \\\bodySmall{\textcolor{textTertiary}{#4}}%
+    }%
+    \vspace{-0.75\baseunit}%
+}
+
+\NewDocumentCommand{\achievement}{o m o}{%
+    \item {\bodyDefault{#2}}%
+    \IfValueT{#1}{%
+        \space{\bodySmall{\textcolor{textTertiary}{[#1]}}}%
+    }%
+    \IfValueT{#3}{%
+        \\\bodySmall{\textcolor{textTertiary}{Impact: #3}}%
+    }%
+}
+
+\newcommand{\skillBlock}[2]{%
+    \begin{minipage}[t]{0.31\textwidth}
+        {\bodyDefault{\textbf{\textcolor{textPrimary}{#1}}}}\par
+        \spacingxxs
+        {\bodyDefault{#2}}%
+    \end{minipage}}
+
+
+
+\newcommand{\education}[5]{
+    % #1: Degree | #2: Institution | #3: Duration | #4: Location | #5: Specialization/Minor (optional)
+    {\bodyDefault{\textbf{#1}}}
+    \if\relax\detokenize{#5}\relax\else
+        \vspace{-0.25\baseunit}
+        {\bodySmall{\textcolor{textTertiary}{ -- #5}}}
+    \fi
+    \hfill
+    {\bodySmall{\textcolor{textTertiary}{#3}}}\\
+    {\bodyDefault{\textcolor{textTertiary}{#2}}} \hfill {\bodySmall{\textcolor{textTertiary}{#4}}}
+
+}
+
+\newcommand{\coursework}[1]{
+    \vspace{0.25em}
+    \begin{customItemize} #1 \end{customItemize}
+}
+
+% New command for notable projects
+\newcommand{\project}[2][]{
+    % #1: Tech stack (optional) | #2: Project description
+    \item #2
+    \if\relax\detokenize{#1}\relax\else
+        {\textcolor{textTertiary}{\textit{[#1]}}}
+    \fi
+}
+
+\newcommand{\engagement}[3]{
+    \item \bodyDefault{#1} \hfill \bodySmall{\textcolor{textTertiary}{
+        \if\relax\detokenize{#2}\relax\else #2, \fi #3}}
+
+}
+
+\newcommand{\award}[3]{
+    \item \bodyDefault{#1} \hfill \bodySmall{\textcolor{textTertiary}{
+        \if\relax\detokenize{#2}\relax\else #2, \fi #3}}
+}
+
+% -----------------------------
+% Start Document
+% -----------------------------
+
+\pagestyle{empty}
+\color{textPrimary}
+% Add before \begin{document}
+\raggedbottom  % Prevents awkward vertical stretching
+\widowpenalty=10000
+\clubpenalty=10000
+\brokenpenalty=10000
+
+% Better table spacing control
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1}
+
+\raggedbottom
+
+\begin{document}
+
+\resumeHeader{Ahsan Fazal}{Senior Software Architect \& Cloud Infrastructure Engineer}{
+    \href{mailto:me@ahsanfazal.com}{\textcolor{textTertiary}{me@ahsanfazal.com}} \\[0.15\baseunit]
+    \href{tel:+31612457671}{\textcolor{textTertiary}{+31 6 12457671}} \\[0.15\baseunit]
+    \href{https://github.com/ahsanfazal}{\textcolor{linkColor}{GitHub}} \textbullet{}
+    \href{https://linkedin.com/in/ahsanfazal}{\textcolor{linkColor}{LinkedIn}} \\[0.15\baseunit]
+}
+
+\sectionHeading{Professional Summary}
+
+\summary{Full Stack Developer and Cloud \& DevOps Engineer with exceptional ability to transform complex systems through rapid mastery and systematic improvement. Specializes in high-performance cloud infrastructure and distributed systems, consistently architecting clean, scalable solutions for mission-critical applications. Combines unusually fast execution with rigorous design thinking, regularly turning challenging technical problems into elegant, maintainable systems. International conference speaker with proven expertise in cloud-native architectures, serverless transformation, and secure system design. Known for elevating development practices and driving teams toward technical excellence through clear architecture and automated workflows.}
+
+\spacingsm
+% \sectionHeading{Technical Expertise}
+
+\customDivider
+\begin{tabular}{@{}p{0.23\textwidth}@{\hspace{0.02\textwidth}}p{0.23\textwidth}@{\hspace{0.02\textwidth}}p{0.23\textwidth}@{\hspace{0.02\textwidth}}p{0.23\textwidth}@{}}
+    \skillBlock{Cloud \& Infrastructure}{
+        Multi-Region Systems \\
+        Serverless Architectures \\
+        Distributed Networks \\
+        Cloud-Native Stacks
+    } &
+    \skillBlock{Development \& Automation}{
+        TypeScript \& Node.js \\
+        Go \& Rust Tooling \\
+        Real-Time Systems \\
+        CI/CD Pipelines
+    } &
+    \skillBlock{DevOps \& Platform Ops}{
+        GitOps Workflows \\
+        Docker \& Kubernetes \\
+        Monitoring \& Alerts \\
+        Event-Driven Flows
+    } &
+    \skillBlock{Security \& Reliability}{
+        Incident Response \\
+        Threat Detection \\
+        OAuth2.0 \& API Security \\
+        Cloud Compliance
+    }
+\end{tabular}
+
+
+\spacingsm
+\sectionHeading{Professional Experience}
+
+% ----- ENTERPRISE TRANSFORMATION -----
+\company[Global IoT platform, 100M+ monthly requests]{Q42 \& Philips Hue}{Den Haag, Netherlands}
+
+\role{Infrastructure Engineer}{Jun 2019}{Sep 2019}
+\begin{customItemize}
+   \achievement[OAuth 2.0]{Engineered RFC-compliant OAuth system, enabling seamless Apple and Google Home integrations on a global scale}
+   \achievement[Multi-Region]{Transformed infrastructure from Netherlands-only to multi-region, reducing US latency by 70\%}
+   \achievement[API Gateway]{Built API management system, meeting China/Russia data sovereignty requirements while scaling to millions of requests}
+   \achievement[Collaboration]{Coordinated closely with a high-performance team of five, covering API, infrastructure, and multi-region replication}
+\end{customItemize}
+
+
+\company[National policy research platform powering government decisions]{Populytics}{Leiden, Netherlands}
+
+\role{Cloud Architecture Engineer}{May 2023}{Nov 2023}
+\begin{customItemize}
+  \achievement[CloudFront/S3]{Architected multi-region CDN using S3 replication, achieving automated cache invalidation with Lambda@Edge}
+  \achievement[AWS]{Developed event-driven pipeline (EventBridge/SNS/SQS) processing 100K+ daily survey responses to enhance data throughput}
+  \achievement[Infrastructure]{Designed GitOps-based IaC deployments, supporting per-PR test environments with RDS/DynamoDB snapshots}
+  \achievement[Data Compliance]{Ensured survey data compliance with national policy standards, securing key government contracts}
+\end{customItemize}
+
+\role{Systems Engineer}{Mar 2021}{Dec 2021}
+\begin{customItemize}
+  \achievement[Serverless]{Engineered a scalable serverless stack with AWS Lambda, DynamoDB, and API Gateway, supporting 36K+ concurrent users}
+  \achievement[Database]{Performed a zero-downtime migration from RDS to a custom-optimized PostgreSQL cluster, reducing costs by 60\%}
+  \achievement[Node.js]{Developed real-time survey engines using WebSocket APIs, handling complex branching logic across interactive surveys}
+  \achievement[CI/CD]{Built a comprehensive CI/CD pipeline supporting each PR with a dedicated test environment, integrating with Jira workflows}
+\end{customItemize}
+
+
+
+% ----- INNOVATION & SPEED -----
+\company[High-intensity innovation lab for enterprise clients]{Lean Motherfuckers}{Europe}
+
+\role{The Hacker (Full-Stack Developer)}{2016}{Present}
+\begin{customItemize}
+  \achievement[HealthKit]{Built native health monitoring suite (SwiftUI) with real-time HealthKit integration across multiple sensors}
+  \achievement[Frontend]{Engineered React-based scheduling interface with drag-and-drop, conflict resolution, and real-time updates}
+  \achievement[AWS]{Architected serverless video platform using CloudFront/MediaConvert, achieving sub-second video startup times}
+  \achievement[Blockchain]{Designed Solidity smart contracts for fractional real estate investments with automated settlements}
+\end{customItemize}
+
+\role{Technical Innovation Lead}{2016}{Present}
+\begin{customItemize}
+  \achievement[Process]{Pioneered a unique development methodology combining intense focus periods with strategic relaxation to drive innovation}
+  \achievement[Impact]{Delivered enterprise-grade systems for clients like Google and NS in record time, turning ideas into actionable MVPs}
+  \achievement[Efficiency]{Led high-intensity sprints, consistently achieving a 90\% adoption rate for new technologies and processes}
+  \achievement[Scale]{Successfully delivered dozens of prototypes, with a time-to-market reduction of 40\% for client products}
+\end{customItemize}
+
+
+
+% ----- PLATFORM SCALE -----
+\company[World's largest street art platform with 64,732 artworks across 1,766 cities]{Street Art Cities}{Global}
+
+\role{Chief Technology Advisor}{May 2018}{Present}
+\begin{customItemize}
+  \achievement[Serverless]{Designed an event-driven system using Lambda and EventBridge to process image uploads, handling 1K+ uploads weekly}
+  \achievement[DynamoDB]{Created a single-table schema with GSIs to optimize data access for 60K+ artworks by artist, city, and country}
+  \achievement[Infrastructure]{Implemented a multi-region CDN with CloudFront and Lambda@Edge, reducing storage costs by 70\%}
+\end{customItemize}
+
+\role{Lead Systems Engineer}{June 2017}{May 2018}
+\begin{customItemize}
+  \achievement[AWS]{Refactored PHP monolith into serverless microservices with API Gateway and 30+ Lambda functions using a custom authorizer}
+  \achievement[Data]{Led zero-downtime migration from MySQL to DynamoDB using DMS, maintaining data integrity with custom transformers}
+  \achievement[Mobile]{Developed a React Native app with offline-first architecture, supporting real-time updates via AWS AppSync}
+\end{customItemize}
+
+
+% ----- COMPLEX SYSTEMS -----
+\company[Azure security operations \& threat response]{Wortell}{Netherlands}
+
+\role{Security Systems Engineer}{Aug 2021}{Apr 2023}
+\begin{customItemize}
+   \achievement[KQL]{Built a custom detection engine with 200+ KQL queries to analyze Defender ATP and network telemetry across 50K endpoints}
+   \achievement[Go/Python]{Developed a threat intelligence pipeline integrating custom feeds via Azure Functions, reducing false positives by 65\%}
+   \achievement[Azure]{Automated incident response workflows using Azure Functions to orchestrate custom remediation actions}
+\end{customItemize}
+
+\company[TU Delft space robotics mission]{Lunar Zebro}{Delft, Netherlands}
+
+\role{Head of Ground Segment Department (leading a team of 10+ people)}{Jul 2023}{Jan 2024}
+\begin{customItemize}
+    \achievement[Architecture]{Rebuilt department’s architecture from the ground up following a complete team turnover to restore operations}
+    \achievement[Process]{Implemented agile sprints, reducing engineering cycles from 6 months to 2 weeks and accelerating decisions by 80\%}
+    \achievement[Systems]{Introduced tools and practices, removing cross-department bottlenecks to streamline mission workflows}
+\end{customItemize}
+
+\role{Ground Segment Engineer}{Sep 2022}{Jun 2023}
+\begin{customItemize}
+   \achievement[Engineering]{Overhauled space engineering workflow by applying lean methodologies from tech, improving efficiency}
+   \achievement[Operations]{Cut mission planning cycles from 3 months to 2 weeks by eliminating bureaucratic steps}
+   \achievement[Leadership]{Assumed an informal leadership role, fostering a shift from analysis-paralysis to proactive execution}
+\end{customItemize}
+
+
+% --------- COVID-19 RESPONSE ---------
+\company[COVID-19 Emergency Response Platform]{GewoonMensen}{Netherlands}
+
+\role{Technical Lead \& Chief Architect}{Mar 2020}{May 2020}
+\begin{customItemize}
+   \achievement[Architecture]{Architected and led development of a COVID-19 response platform within 72 hours to handle urgent health demands}
+   \achievement[Scale]{Designed and deployed a scalable system on Google Cloud Platform (GCP) to support 100K+ daily users}
+   \achievement[Leadership]{Assembled and led a crisis response team of senior engineers, delivering a production-ready platform within days}
+\end{customItemize}
+
+
+% --------- FRONTEND ARCHITECTURE ---------
+\company[Google-backed retail intelligence platform handling £100M+ in commerce]{NearSt}{London, United Kingdom}
+
+\role{Lead Frontend Architect}{May 2018}{Jul 2018}
+\begin{customItemize}
+   \achievement[React]{Developed a real-time dashboard with WebSocket live updates, supporting 3K+ concurrent retail connections}
+   \achievement[Architecture]{Built a modular component system and Storybook-driven design, scaling efficiently across product lines}
+   \achievement[GraphQL]{Designed a federated GraphQL layer to aggregate inventory, analytics, and sales data for 100K+ SKUs}
+\end{customItemize}
+
+
+\spacingsm
+
+% ------------------ Education ------------------ %
+\sectionHeading{Education}
+
+\education{Bachelor of Science Aerospace Engineering}{TU Delft}{2020 -- 2024}{Delft, Netherlands}{Minor in Computer Science}
+\education{Bachelor of Science Physics}{TU Delft}{2024 -- Present}{Delft, Netherlands}{Elemental Particle Physics Track}
+
+\spacingsm
+
+% ------------------ Coursework ------------------ %
+
+% ------------------ Projects ------------------ %
+
+% ------------------ Speaking Engagements ------------------ %
+\sectionHeading{Speaking Engagements and Recognitions}
+
+\begin{minipage}[t]{0.55\textwidth}
+    \begin{customItemize}
+        \engagement{RChain Conference -- Keynote Speaker}{}{Berlin, 2019}
+        \engagement{Blockchain Innovation Week -- Presenter}{}{The Hague, 2018}
+        \engagement{Internet of Agreements Conference -- Presenter}{}{London, 2018}
+    \end{customItemize}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\textwidth}
+    \begin{customItemize}
+        \award{1st Prize Winner ADE Hackathon}{}{2017}
+        \award{Accenture's TNW Best 500 Under 26}{}{2017 -- 2024}
+        \award{GitHub Arctic Code Vault Contributor}{}{2020}
+    \end{customItemize}
+\end{minipage}
+
+\end{document}
