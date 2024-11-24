@@ -25,7 +25,7 @@ const JobRecord = (props: Job) => {
                 {skill}
 
                 {i < props.skills.length - 1 && (
-                  <span className="mx-2"> *</span>
+                  <span className="mx-1 opacity-40">*</span>
                 )}
               </span>
             ))}

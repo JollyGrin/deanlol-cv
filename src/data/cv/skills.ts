@@ -19,6 +19,8 @@ import {
   SiSolana as IconSolana,
 } from "react-icons/si";
 
+import { BsFillMotherboardFill as IconAI } from "react-icons/bs";
+
 import { LuRainbow as IconRainbowKit } from "react-icons/lu";
 
 import {
@@ -51,4 +53,5 @@ export const SKILL_MAP: [string, IconType][] = [
   [SKILL.TAILWIND, IconTailwind],
   [SKILL.ETH, IconEthereum],
   [SKILL.SOL, IconSolana],
+  [SKILL.OLLAMA, IconAI],
 ];

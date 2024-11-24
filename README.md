@@ -3,6 +3,7 @@
 
 edit booth - threejs/nextjs
 allowed users to pay to edit a booth which would be displayed in the Inn
+https://x.com/deandotland/status/1644693302661267456
 
 attendance tracker
 setup a postgres wth supabase, and made api endpoints in nextjs to keep real time data of who was at the inn. Then rendered this in our admin panel

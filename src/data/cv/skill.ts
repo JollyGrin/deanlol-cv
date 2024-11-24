@@ -17,4 +17,5 @@ export enum SKILL {
   THREE = "three.js",
   WAGMI = "wagmi.sh",
   WEBSOCKET = "websocket",
+  OLLAMA = "ollama-ai",
 }

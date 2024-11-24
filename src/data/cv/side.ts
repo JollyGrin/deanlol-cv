@@ -72,4 +72,13 @@ export const SIDES: Side[] = [
     role: "frontend",
     skills: [SKILL.TAILWIND, SKILL.NEXTJS, SKILL.REACTQUERY, SKILL.SOL],
   },
+  {
+    date: "",
+    name: "Ollama Experiments",
+    url: "https://github.com/JollyGrin/ollama-experiments",
+    logo: "logos/ollama.png",
+    pitch: "Experimenting with local LLMs & Go to create local ai tools.",
+    role: "experimenter",
+    skills: [SKILL.GO, SKILL.OLLAMA],
+  },
 ];

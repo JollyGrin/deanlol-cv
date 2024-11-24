@@ -37,7 +37,7 @@ const SideProject = (job: Side) => {
             return (
               <span key={skill + "span" + index + job.name}>
                 <span>{skill}</span>
-                {isNotLast && <span className="mx-1"> *</span>}
+                {isNotLast && <span className="mx-1">*</span>}
               </span>
             );
           })}
