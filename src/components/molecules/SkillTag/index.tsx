@@ -34,6 +34,8 @@ const SkillTag = ({ skill }: { skill: string }) => {
       document.removeEventListener("mousemove", updateCursorPosition);
   }, [isHovering]);
 
+  if (typeof window === "undefined") return null;
+
   return (
     <>
       <div
