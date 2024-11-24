@@ -15,7 +15,7 @@ export default function Home() {
 
         <div className="w-full flex flex-col items-center min-h-[20vh]">
           <h4 className="underline mb-2">dabbles in</h4>
-          <div className="flex flex-wrap gap-2 w-full">
+          <div className="flex flex-wrap gap-2 w-full justify-center">
             <SkillTags />
           </div>
         </div>
