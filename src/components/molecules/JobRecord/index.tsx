@@ -1,7 +1,8 @@
 import { ExternalLink } from "@/components/atoms/ExternalLink";
 import { Job, JOBS } from "@/data/cv/jobs";
 
-export const JobRecords = () => JOBS.map((job) => <JobRecord {...job} />);
+export const JobRecords = () =>
+  JOBS.map((job) => <JobRecord key={"jobrecord" + job.name} {...job} />);
 const JobRecord = (props: Job) => {
   return (
     <div className="flex flex-col gap-1 mb-8">
