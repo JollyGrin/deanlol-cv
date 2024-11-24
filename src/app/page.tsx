@@ -9,19 +9,21 @@ import {
 } from "react-icons/si";
 
 export default function Home() {
+  const iconStyle = "hover:opacity-75 hover:scale-110 transition-all";
   return (
     <main className="px-4 pb-4 flex flex-col gap-8">
       <div className="max-w-[450px] mx-auto">
+        {/* ## HERO */}
         <div className="grid place-items-center h-[15vh]">
           <div className="flex flex-col gap-2">
             <h1 className="text-5xl text-center">dean</h1>
             <div className="flex text-2xl gap-2 justify-center">
               <p>web, design, 3d </p>
               <Link href="https://github.com/JollyGrin">
-                <IconGithub className="hover:opacity-75 hover:scale-110 transition-all" />
+                <IconGithub className={iconStyle} />
               </Link>
               <Link href="https://www.linkedin.com/in/dmasley">
-                <IconLinkedIn />
+                <IconLinkedIn className={iconStyle} />
               </Link>
             </div>
           </div>
@@ -41,7 +43,7 @@ export default function Home() {
           <JobRecords />
         </div>
 
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center ">
           <h4 className="underline mb-2">side projects</h4>
           <SideProjects />
         </div>
