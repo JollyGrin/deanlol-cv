@@ -1,5 +1,6 @@
 "use client";
 
+import { BorderBeam } from "@/components/atoms/BorderBeam";
 import { SKILL_MAP, SKILLS } from "@/data/cv/skills";
 import { useTagHoverStore } from "@/store/TagHover/store";
 import { useEffect, useState } from "react";
@@ -43,16 +44,22 @@ const SkillTag = ({ skill }: { skill: string }) => {
         {Icon ? <Icon /> : ""}
         <p>{skill}</p>
       </div>
-      {isHovering && Icon && (
+      {Icon && (
         <div
           className="fixed pointer-events-none z-50 bg-background rounded-full"
           style={{
             left: cursorPosition.x + 15,
             top: cursorPosition.y - 15,
             transform: "translate(0, 0)",
+            opacity: isHovering ? 1 : 0,
+            rotate: isHovering ? "0deg" : "90deg",
+            transitionProperty: "opacity, rotate",
+            transitionDuration: "0.35s",
+            transitionTimingFunction: "ease",
           }}
         >
-          <Icon className="w-6 h-6 text-foreground p-1" />
+          <Icon className="w-6 h-6 text-foreground m-3" />
+          <BorderBeam />
         </div>
       )}
     </>
