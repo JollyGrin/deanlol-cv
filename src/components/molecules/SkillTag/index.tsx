@@ -52,9 +52,9 @@ const SkillTag = ({ skill }: { skill: string }) => {
             top: cursorPosition.y - 15,
             transform: "translate(0, 0)",
             opacity: isHovering ? 1 : 0,
-            rotate: isHovering ? "0deg" : "90deg",
+            rotate: isHovering ? "0deg" : "40deg",
             transitionProperty: "opacity, rotate",
-            transitionDuration: "0.35s",
+            transitionDuration: "0.5s",
             transitionTimingFunction: "ease",
           }}
         >
