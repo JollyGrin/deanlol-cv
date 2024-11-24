@@ -1,3 +1,4 @@
+import { ExternalLink } from "@/components/atoms/ExternalLink";
 import { Job, JOBS } from "@/data/cv/jobs";
 
 export const JobRecords = () => JOBS.map((job) => <JobRecord {...job} />);
@@ -11,7 +12,7 @@ const JobRecord = (props: Job) => {
           className="w-[2rem] h-[2rem] rounded-full overflow-hidden"
         />
         <div className="flex flex-col gap-2">
-          <p className="font-bold text-xl">{props.name}</p>
+          <ExternalLink name={props.name} url={props.url} />
           <p className="break-all">{props.pitch}</p>
           <div
             key={props.name}

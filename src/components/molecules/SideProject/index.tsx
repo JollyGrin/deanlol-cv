@@ -1,9 +1,7 @@
 "use client";
 
+import { ExternalLink } from "@/components/atoms/ExternalLink";
 import { Side, SIDES } from "@/data/cv/side";
-import Link from "next/link";
-
-import { GoArrowUpRight as IconLink } from "react-icons/go";
 
 export const SideProjects = () => {
   return (
@@ -20,12 +18,7 @@ const SideProject = (job: Side) => {
     <div className="grid grid-cols-[1fr_8fr]">
       <img src={job.logo} alt="logo" className="w-[2rem] h-[2rem]" />
       <div className="flex flex-col">
-        <Link href={job.url ?? "#"}>
-          <div className="flex gap-x-2 group cursor-pointer">
-            <p className="text-xl font-bold">{job.name}</p>
-            <IconLink className="group-hover:translate-x-2 group-hover:translate-y-[-0.25rem] transition-all" />
-          </div>
-        </Link>
+        <ExternalLink name={job.name} url={job.url} />
         <p>{job.pitch}</p>
 
         <div

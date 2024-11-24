@@ -4,7 +4,7 @@ import { SkillTags } from "@/components/molecules/SkillTag";
 
 export default function Home() {
   return (
-    <main className="px-4 flex flex-col gap-8">
+    <main className="px-4 pb-4 flex flex-col gap-8">
       <div className="max-w-[450px] mx-auto">
         <div className="grid place-items-center h-[15vh]">
           <div className="flex flex-col gap-2">

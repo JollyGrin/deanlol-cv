@@ -1,7 +1,7 @@
 import { Job } from "./jobs";
 import { SKILL } from "./skill";
 
-export type Side = Job & { url?: string; video?: string };
+export type Side = Job & { video?: string };
 export const SIDES: Side[] = [
   {
     date: "2019-now",

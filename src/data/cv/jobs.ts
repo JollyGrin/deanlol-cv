@@ -7,12 +7,14 @@ export type Job = {
   pitch: string;
   role: string;
   skills: string[];
+  url?: string;
 };
 
 export const JOBS: Job[] = [
   {
     date: "2020-24",
     name: "Hyfen",
+    url: "https://www.hyfen.eu/",
     logo: "logos/hyfen.jpeg",
     pitch:
       "Ecosystem infrastructure: realtime data and streamlined processes, while greatly reducing operating costs and maintaining the privacy of individual ecosystem partners.",
