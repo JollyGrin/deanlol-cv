@@ -1,6 +1,12 @@
 import { JobRecords } from "@/components/molecules/JobRecord";
 import { SideProjects } from "@/components/molecules/SideProject";
 import { SkillTags } from "@/components/molecules/SkillTag";
+import Link from "next/link";
+
+import {
+  SiGithub as IconGithub,
+  SiLinkedin as IconLinkedIn,
+} from "react-icons/si";
 
 export default function Home() {
   return (
@@ -8,8 +14,16 @@ export default function Home() {
       <div className="max-w-[450px] mx-auto">
         <div className="grid place-items-center h-[15vh]">
           <div className="flex flex-col gap-2">
-            <h1 className="text-5xl">dean</h1>
-            <p>web, design, 3d</p>
+            <h1 className="text-5xl text-center">dean</h1>
+            <div className="flex text-2xl gap-2 justify-center">
+              <p>web, design, 3d </p>
+              <Link href="https://github.com/JollyGrin">
+                <IconGithub className="hover:opacity-75 hover:scale-110 transition-all" />
+              </Link>
+              <Link href="https://www.linkedin.com/in/dmasley">
+                <IconLinkedIn />
+              </Link>
+            </div>
           </div>
         </div>
 

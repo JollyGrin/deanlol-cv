@@ -1,11 +1,24 @@
+"use client";
+
 import { ExternalLink } from "@/components/atoms/ExternalLink";
 import { Job, JOBS } from "@/data/cv/jobs";
+import { useTagHoverStore } from "@/store/TagHover/store";
 
 export const JobRecords = () =>
   JOBS.map((job) => <JobRecord key={"jobrecord" + job.name} {...job} />);
+
 const JobRecord = (props: Job) => {
+  const hoveredTag = useTagHoverStore((store) => store.hoveredTag);
+  const nothingIsSelected = hoveredTag === "";
+
+  // fade out unmatching jobs, if tag is specified
+  const isHovered = props.skills.includes(hoveredTag) || nothingIsSelected;
+  const opacity = isHovered ? "opacity-100" : "opacity-20";
+
   return (
-    <div className="flex flex-col gap-1 mb-8">
+    <div
+      className={`flex flex-col gap-1 mb-8 transition-all duration-500 ${opacity}`}
+    >
       <p className="text-mono font-bold">{props.date}</p>
       <div className="w-full grid grid-cols-[1fr_10fr] gap-2">
         <img

@@ -2,6 +2,7 @@
 
 import { ExternalLink } from "@/components/atoms/ExternalLink";
 import { Side, SIDES } from "@/data/cv/side";
+import { useTagHoverStore } from "@/store/TagHover/store";
 
 export const SideProjects = () => {
   return (
@@ -14,8 +15,17 @@ export const SideProjects = () => {
 };
 
 const SideProject = (job: Side) => {
+  const hoveredTag = useTagHoverStore((store) => store.hoveredTag);
+  const nothingIsSelected = hoveredTag === "";
+
+  // fade out unmatching jobs, if tag is specified
+  const isHovered = job.skills.includes(hoveredTag) || nothingIsSelected;
+  const opacity = isHovered ? "opacity-100" : "opacity-20";
+
   return (
-    <div className="grid grid-cols-[1fr_8fr]">
+    <div
+      className={`grid grid-cols-[1fr_8fr] transition-all duration-500 ${opacity}`}
+    >
       <img src={job.logo} alt="logo" className="w-[2rem] h-[2rem]" />
       <div className="flex flex-col">
         <ExternalLink name={job.name} url={job.url} />
