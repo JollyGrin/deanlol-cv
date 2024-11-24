@@ -12,15 +12,15 @@ export const SIDES: Side[] = [
     role: "founder",
     // video: "thumbvideos/inn.webp",
     skills: [
+      SKILL.ETH,
+      SKILL.DCL,
       SKILL.BLENDER,
       SKILL.THREE,
       SKILL.WAGMI,
       SKILL.RAINBOWKIT,
-      SKILL.DCL,
       SKILL.REACTQUERY,
       SKILL.CHAKRA,
       SKILL.NEXTJS,
-      SKILL.ETH,
     ],
   },
 
@@ -29,7 +29,7 @@ export const SIDES: Side[] = [
     name: "Unbrewed",
     url: "https://unbrewed.xyz",
     logo: "logos/unbrewed.png",
-    pitch: "Play Unmatched (boardgame) with 1000+ variant decks online",
+    pitch: "Play Unmatched (boardgame) online with 1000+ variant decks",
     role: "founder",
     skills: [
       SKILL.NEXTJS,
@@ -70,7 +70,7 @@ export const SIDES: Side[] = [
     logo: "logos/teamplay.png",
     pitch: "Game agnostic matchmaking tool. Schedule sessions in advance.",
     role: "frontend",
-    skills: [SKILL.TAILWIND, SKILL.NEXTJS, SKILL.REACTQUERY, SKILL.SOL],
+    skills: [SKILL.SOL, SKILL.TAILWIND, SKILL.NEXTJS, SKILL.REACTQUERY],
   },
   {
     date: "",
