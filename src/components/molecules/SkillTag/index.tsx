@@ -46,10 +46,21 @@ const SkillTag = ({ skill }: { skill: string }) => {
       </div>
       {Icon && (
         <div
-          className="fixed pointer-events-none z-50 bg-background rounded-full"
+          /**
+           * NOTE: This is the icon display when hovering over a style tag:
+           * on mobile: place on top right of screen
+           * not on mobile: hover next to the cursor
+           * */
+          className="fixed pointer-events-none z-50 bg-background rounded-full right-4 top-4 block sm:right-auto sm:top-auto"
           style={{
-            left: cursorPosition.x + 15,
-            top: cursorPosition.y - 15,
+            left:
+              window?.innerWidth >= 640
+                ? `${cursorPosition?.x + 15}px`
+                : undefined,
+            top:
+              window?.innerWidth >= 640
+                ? `${cursorPosition?.y - 15}px`
+                : undefined,
             transform: "translate(0, 0)",
             opacity: isHovering ? 1 : 0,
             rotate: isHovering ? "0deg" : "40deg",
