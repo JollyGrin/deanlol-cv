@@ -13,10 +13,10 @@
 \usepackage{xparse} 
 
 \hypersetup{
-    pdftitle={Resume - Ahsan Fazal},
-    pdfauthor={Ahsan Fazal},
-    pdfsubject={Software Architect \& Cloud Infrastructure Engineer},
-    pdfkeywords={software architect, cloud infrastructure, engineering},
+    pdftitle={Resume - Dean Masley},
+    pdfauthor={Dean Masley},
+    pdfsubject={Frontend developer \& Design},
+    pdfkeywords={frontend developer, design},
     pdfcreator={LaTeX},
     pdfproducer={pdfTeX}
 }
@@ -215,45 +215,44 @@
 
 \begin{document}
 
-\resumeHeader{Ahsan Fazal}{Senior Software Architect \& Cloud Infrastructure Engineer}{
-    \href{mailto:me@ahsanfazal.com}{\textcolor{textTertiary}{me@ahsanfazal.com}} \\[0.15\baseunit]
-    \href{tel:+31612457671}{\textcolor{textTertiary}{+31 6 12457671}} \\[0.15\baseunit]
-    \href{https://github.com/ahsanfazal}{\textcolor{linkColor}{GitHub}} \textbullet{}
-    \href{https://linkedin.com/in/ahsanfazal}{\textcolor{linkColor}{LinkedIn}} \\[0.15\baseunit]
+\resumeHeader{Dean Masley}{Frontend Developer, Design (2d \& 3d) \& Biz-Dev}{
+    \href{mailto:dean@dean.lol}{\textcolor{textTertiary}{dean@dean.lol}} \\[0.15\baseunit]
+    \href{tel:+31640490432}{\textcolor{textTertiary}{+31 6 40490432}} \\[0.15\baseunit]
+    \href{https://github.com/jollygrin}{\textcolor{linkColor}{GitHub}} \textbullet{}
+    \href{https://linkedin.com/in/dmasley}{\textcolor{linkColor}{LinkedIn}} \\[0.15\baseunit]
 }
 
 \sectionHeading{Professional Summary}
 
-\summary{Full Stack Developer and Cloud \& DevOps Engineer with exceptional ability to transform complex systems through rapid mastery and systematic improvement. Specializes in high-performance cloud infrastructure and distributed systems, consistently architecting clean, scalable solutions for mission-critical applications. Combines unusually fast execution with rigorous design thinking, regularly turning challenging technical problems into elegant, maintainable systems. International conference speaker with proven expertise in cloud-native architectures, serverless transformation, and secure system design. Known for elevating development practices and driving teams toward technical excellence through clear architecture and automated workflows.}
+\summary{Dynamic entrepreneur with a proven track record of cofounding impactful ventures and evolving into a multifaceted professional with expertise in business development, design, and frontend development. Starting with leadership roles in international nonprofits and startups, I honed skills in creating compelling narratives, strategic partnerships, and innovative products. Transitioning to tech, I mastered frontend development over five years, building complex platforms in the financial planning, insurance, and pension sectors. Outside of work, I push creative and technical boundaries through side projects, such as developing a metaverse club (3d design, code, attendance tracking systems, ethereum OAuth, NFT bulk distributions, organizing artists from across the world, 2+ years of shows every month) and boardgame simulators that can be played online with friends. Passionate about leveraging technology and design to turn ambitious (or just fun) ideas into reality.}
 
 \spacingsm
 % \sectionHeading{Technical Expertise}
 
 \customDivider
 \begin{tabular}{@{}p{0.23\textwidth}@{\hspace{0.02\textwidth}}p{0.23\textwidth}@{\hspace{0.02\textwidth}}p{0.23\textwidth}@{\hspace{0.02\textwidth}}p{0.23\textwidth}@{}}
-    \skillBlock{Cloud \& Infrastructure}{
-        Multi-Region Systems \\
-        Serverless Architectures \\
-        Distributed Networks \\
-        Cloud-Native Stacks
+    \skillBlock{Design}{
+        Figma \\
+        Blender (3d modeling) \\
+        Davinci Resolve (Video editing) \\
     } &
-    \skillBlock{Development \& Automation}{
-        TypeScript \& Node.js \\
-        Go \& Rust Tooling \\
-        Real-Time Systems \\
-        CI/CD Pipelines
+    \skillBlock{Frontend Frameworks}{
+        Next.js / React \\
+        Svelte(kit) \\
+        Angular \\
+        Decentraland SDK
     } &
-    \skillBlock{DevOps \& Platform Ops}{
-        GitOps Workflows \\
-        Docker \& Kubernetes \\
-        Monitoring \& Alerts \\
-        Event-Driven Flows
+    \skillBlock{Implemented many times:}{
+        React-query (tanstack) \\
+        Tailwind / Chakra / Vanilla CSS \\
+        Three.js \\
+        Eth/Solana Dapps
     } &
-    \skillBlock{Security \& Reliability}{
-        Incident Response \\
-        Threat Detection \\
+    \skillBlock{ }{
+        Unit testing (jest) \\
+        Browser automation / E2E (pupeteer/cyprus) \\
         OAuth2.0 \& API Security \\
-        Cloud Compliance
+        Websockets
     }
 \end{tabular}
 
@@ -262,132 +261,108 @@
 \sectionHeading{Professional Experience}
 
 % ----- ENTERPRISE TRANSFORMATION -----
-\company[Global IoT platform, 100M+ monthly requests]{Q42 \& Philips Hue}{Den Haag, Netherlands}
+\company[Compliant pension \& insurance ecosystem infrastructure]{Hyfen}{Amsterdam, Netherlands}
 
-\role{Infrastructure Engineer}{Jun 2019}{Sep 2019}
+\role{Frontend Engineer}{2020}{2024}
 \begin{customItemize}
-   \achievement[OAuth 2.0]{Engineered RFC-compliant OAuth system, enabling seamless Apple and Google Home integrations on a global scale}
-   \achievement[Multi-Region]{Transformed infrastructure from Netherlands-only to multi-region, reducing US latency by 70\%}
-   \achievement[API Gateway]{Built API management system, meeting China/Russia data sovereignty requirements while scaling to millions of requests}
-   \achievement[Collaboration]{Coordinated closely with a high-performance team of five, covering API, infrastructure, and multi-region replication}
+    \achievement[Authorization]{Integrated Azure (MSAL) login authorzation for secure and compliant logins for pension and insurance infrastructure }
+    \achievement[Unit Testing]{Ensure long term code quality with high unit test coverage to ensure components works, even when being refactored years later. All code delivered has >80\% code coverage.}
+    \achievement[API Handling]{Full range of api handling, with sophisticated caching and token management, multi-part forms (file uploading), loading and error handling.}
+    \achievement[Typesafety]{Created custom tooling to produce generated type files for frontend, to solve back-and-forth communication with backend and ensuring easy refactoring.}
+   \achievement[Style Systems]{Implemented reusable style systems in multiple projects to ensure consistency across teams and accuracy to design specs.}
+   \achievement[Client/Server]{Experience in both client and server rendered components, fixing hydration errors, seperating concerns for security in server}
+   \achievement[Collaboration]{Coordinated closely with multiple teams, communicating between client business proposals, design, and backend.}
 \end{customItemize}
 
 
-\company[National policy research platform powering government decisions]{Populytics}{Leiden, Netherlands}
+\company[Crowdfund sustainable energy and reduce your energy bill]{NestEgg}{Heerlen, Netherlands}
 
-\role{Cloud Architecture Engineer}{May 2023}{Nov 2023}
+\role{Co-Founder}{2017}{December 2019}
 \begin{customItemize}
-  \achievement[CloudFront/S3]{Architected multi-region CDN using S3 replication, achieving automated cache invalidation with Lambda@Edge}
-  \achievement[AWS]{Developed event-driven pipeline (EventBridge/SNS/SQS) processing 100K+ daily survey responses to enhance data throughput}
-  \achievement[Infrastructure]{Designed GitOps-based IaC deployments, supporting per-PR test environments with RDS/DynamoDB snapshots}
-  \achievement[Data Compliance]{Ensured survey data compliance with national policy standards, securing key government contracts}
+  \achievement[Launch]{Launched a startup in the Netherlands by securing investment and partnership with the largest pension company in the Netherlands}
+  \achievement[Design]{Created all UX designs for our platform, which were used for rapid idea iterating and implementation}
+  \achievement[Product Management]{Organized the A-Z from idea to customers being able to crowdfund and have their energy bill reduced}
+
 \end{customItemize}
 
-\role{Systems Engineer}{Mar 2021}{Dec 2021}
+% \role{Systems Engineer}{Mar 2021}{Dec 2021}
+% \begin{customItemize}
+%   \achievement[Serverless]{Engineered a scalable serverless stack with AWS Lambda, DynamoDB, and API Gateway, supporting 36K+ concurrent users}
+%   \achievement[Database]{Performed a zero-downtime migration from RDS to a custom-optimized PostgreSQL cluster, reducing costs by 60\%}
+%   \achievement[Node.js]{Developed real-time survey engines using WebSocket APIs, handling complex branching logic across interactive surveys}
+%   \achievement[CI/CD]{Built a comprehensive CI/CD pipeline supporting each PR with a dedicated test environment, integrating with Jira workflows}
+% \end{customItemize}
+
+
+\company[International student-focused nonprofit to launch blockchain clubs on university campuses]{Blockchain Education Network}{Earth}
+
+\role{Executive Director}{2015}{2017}
 \begin{customItemize}
-  \achievement[Serverless]{Engineered a scalable serverless stack with AWS Lambda, DynamoDB, and API Gateway, supporting 36K+ concurrent users}
-  \achievement[Database]{Performed a zero-downtime migration from RDS to a custom-optimized PostgreSQL cluster, reducing costs by 60\%}
-  \achievement[Node.js]{Developed real-time survey engines using WebSocket APIs, handling complex branching logic across interactive surveys}
-  \achievement[CI/CD]{Built a comprehensive CI/CD pipeline supporting each PR with a dedicated test environment, integrating with Jira workflows}
-\end{customItemize}
+  \achievement[Growth]{Scaled the organization to +200 student clubs across the US, Canada, Europe, and Asia}
+  \achievement[Grassroots]{Implemented a swarmwise organizational model that empowered local leaders to take initiative and grow larger than I could do alone}
+  \achievement[Public Speaking]{Traveled to conferences across the world to advocate and pitch our organzation (Ted Talks, conference speeches, summit in Dubai, etc)}
+  \achievement[Fundraising]{Raised \$125k+ in donations to fund organization growth }
+  \achievement[Delegation]{Lead an executive team of 8 to handle the global outreach, events throughout the year, and administration}
+  \achievement[Design]{Updated the organization's branding with new logo, style language, website, and promotional materials before scaling the team}
 
-
-
-% ----- INNOVATION & SPEED -----
-\company[High-intensity innovation lab for enterprise clients]{Lean Motherfuckers}{Europe}
-
-\role{The Hacker (Full-Stack Developer)}{2016}{Present}
-\begin{customItemize}
-  \achievement[HealthKit]{Built native health monitoring suite (SwiftUI) with real-time HealthKit integration across multiple sensors}
-  \achievement[Frontend]{Engineered React-based scheduling interface with drag-and-drop, conflict resolution, and real-time updates}
-  \achievement[AWS]{Architected serverless video platform using CloudFront/MediaConvert, achieving sub-second video startup times}
-  \achievement[Blockchain]{Designed Solidity smart contracts for fractional real estate investments with automated settlements}
-\end{customItemize}
-
-\role{Technical Innovation Lead}{2016}{Present}
-\begin{customItemize}
-  \achievement[Process]{Pioneered a unique development methodology combining intense focus periods with strategic relaxation to drive innovation}
-  \achievement[Impact]{Delivered enterprise-grade systems for clients like Google and NS in record time, turning ideas into actionable MVPs}
-  \achievement[Efficiency]{Led high-intensity sprints, consistently achieving a 90\% adoption rate for new technologies and processes}
-  \achievement[Scale]{Successfully delivered dozens of prototypes, with a time-to-market reduction of 40\% for client products}
 \end{customItemize}
 
 
+\spacingxl
+\spacingxl
 
-% ----- PLATFORM SCALE -----
-\company[World's largest street art platform with 64,732 artworks across 1,766 cities]{Street Art Cities}{Global}
+\sectionHeading{Passion Projects}
 
-\role{Chief Technology Advisor}{May 2018}{Present}
+\company[Play the cardgame Sorcery TCG online in the browser | ~1100 users/mo ]{Spells Bar}{spells.bar}
+
+\role{Creator}{2024}{present}
 \begin{customItemize}
-  \achievement[Serverless]{Designed an event-driven system using Lambda and EventBridge to process image uploads, handling 1K+ uploads weekly}
-  \achievement[DynamoDB]{Created a single-table schema with GSIs to optimize data access for 60K+ artworks by artist, city, and country}
-  \achievement[Infrastructure]{Implemented a multi-region CDN with CloudFront and Lambda@Edge, reducing storage costs by 70\%}
+  \achievement[Idea]{Similar to Unmatched, I couldn't find an easy way to play the card game Sorcery TCG in the browser}
+  \achievement[Websockets]{Reused the websocket implementation from Unbrewed to setup lobbies and multiplayer}
+  \achievement[CSS Grid]{Complex implementation of CSS Grid to represent the 36+ slots for cards to be arranged within}
+  \achievement[Drag and Drop]{Added smooth drag and drop functionality to let users make complex arrangements of the cards in designated zones}
+  \achievement[User Feedback]{Rapidly iterated the initial product with growing users to address pain points quickly and provide a stable environment}
+  \achievement[Longevity]{Site is staticly generated, lives on github pages, and sever is easily hosted (even through ngrok) and swappable via the frontend}
 \end{customItemize}
 
-\role{Lead Systems Engineer}{June 2017}{May 2018}
+\company[Metaverse club streaming live artists from across the world | ~400 users/mo]{Innkeeper}{Decentraland}
+
+\role{Creator}{2021}{present}
 \begin{customItemize}
-  \achievement[AWS]{Refactored PHP monolith into serverless microservices with API Gateway and 30+ Lambda functions using a custom authorizer}
-  \achievement[Data]{Led zero-downtime migration from MySQL to DynamoDB using DMS, maintaining data integrity with custom transformers}
-  \achievement[Mobile]{Developed a React Native app with offline-first architecture, supporting real-time updates via AWS AppSync}
+  \achievement[3d Modeling]{Using Blender, created a new 3d model venue every few months to keep the club feeling fresh.}
+  \achievement[3d Modeling]{For 22+ months, created a new 3d model every week for as cover art for a music NFT project (given away for free as reward for attending) }
+  \achievement[Ethereum User]{Purchased the land, delegated for safe editing without exposing vault, and authorized for deploying from CLI}
+  \achievement[3d code]{Learned and implemented the venue with Decentraland's SDK, including custom attendance tracking, dynamic banners, streaming from private server, vip restricted zones, and interactive elements}
+  \achievement[Artist Management]{Grew our artist rooster to over 100+ artists from all over the world, who perform live at our venue and help us maintain weekly events.}
+  \achievement[Attendance Tracking]{Created a custom attendance tracking system, integrated to the metaverse venue and visualized on a frontend dashboard for artists to observe their stats during/after a performance }
+  \achievement[PostgresSQL]{Created a relational database to manage attendance, artist rooster, payment tracking, event scheduling }
+  \achievement[Music Collectibles]{To reward our attendees, I organized and lead our team to create music NFTs, with completely original music made by our rooster of artists, new one each week for 22+ months distributed each week for free to everyone who attended our events.}
+  \achievement[Automation]{To avoid manually sending out hundreds of NFTs each week, I wrote scripts with various eth nodejs libraries that handled checking an attendance list, remove those who already have a balance from that week, and making the blockchain transactions to send NFTs in bulk within one transaction (on Polygon). Later implemented these CLI tools into a frontend, managed by loging in with eth wallet }
+  \achievement[Grant Winner]{Won a grant to pay artists for 6 months of shows, enabling us to provide our volunteer artists with paid gigs for 6 months.}
 \end{customItemize}
 
+\company[Play the boardgame Unmatched online in the browser | ~350 users/mo ]{Unbrewed}{unbrewed.xyz}
 
-% ----- COMPLEX SYSTEMS -----
-\company[Azure security operations \& threat response]{Wortell}{Netherlands}
-
-\role{Security Systems Engineer}{Aug 2021}{Apr 2023}
+\role{Creator}{2020}{present}
 \begin{customItemize}
-   \achievement[KQL]{Built a custom detection engine with 200+ KQL queries to analyze Defender ATP and network telemetry across 50K endpoints}
-   \achievement[Go/Python]{Developed a threat intelligence pipeline integrating custom feeds via Azure Functions, reducing false positives by 65\%}
-   \achievement[Azure]{Automated incident response workflows using Azure Functions to orchestrate custom remediation actions}
-\end{customItemize}
-
-\company[TU Delft space robotics mission]{Lunar Zebro}{Delft, Netherlands}
-
-\role{Head of Ground Segment Department (leading a team of 10+ people)}{Jul 2023}{Jan 2024}
-\begin{customItemize}
-    \achievement[Architecture]{Rebuilt department’s architecture from the ground up following a complete team turnover to restore operations}
-    \achievement[Process]{Implemented agile sprints, reducing engineering cycles from 6 months to 2 weeks and accelerating decisions by 80\%}
-    \achievement[Systems]{Introduced tools and practices, removing cross-department bottlenecks to streamline mission workflows}
-\end{customItemize}
-
-\role{Ground Segment Engineer}{Sep 2022}{Jun 2023}
-\begin{customItemize}
-   \achievement[Engineering]{Overhauled space engineering workflow by applying lean methodologies from tech, improving efficiency}
-   \achievement[Operations]{Cut mission planning cycles from 3 months to 2 weeks by eliminating bureaucratic steps}
-   \achievement[Leadership]{Assumed an informal leadership role, fostering a shift from analysis-paralysis to proactive execution}
-\end{customItemize}
-
-
-% --------- COVID-19 RESPONSE ---------
-\company[COVID-19 Emergency Response Platform]{GewoonMensen}{Netherlands}
-
-\role{Technical Lead \& Chief Architect}{Mar 2020}{May 2020}
-\begin{customItemize}
-   \achievement[Architecture]{Architected and led development of a COVID-19 response platform within 72 hours to handle urgent health demands}
-   \achievement[Scale]{Designed and deployed a scalable system on Google Cloud Platform (GCP) to support 100K+ daily users}
-   \achievement[Leadership]{Assembled and led a crisis response team of senior engineers, delivering a production-ready platform within days}
+  \achievement[Idea]{During covid, wanted to play my favorite boardgame with friends but only way to do so was with a paid desktop-only steam app}
+  \achievement[Launch]{Reached out to the company behind the boardgame for clemency to build an opensource, noncommercial sim to enable play via only the browser}
+  \achievement[Websockets]{Built a websocket implementation (GO backend) on a SSG Nextjs frontend to handle multiple users and multiple lobbies, with 12hrs of persistance from last active action}
+  \achievement[Canvas]{Used native DOM canvas api to let users drag tokens around the board in realtime and see each other's movements}
+  \achievement[User Feedback]{Rapidly iterated the initial product with growing users to address pain points quickly and provide a stable environment}
+  \achievement[Longevity]{Refactored the app to be staticly generated, enabling it to live on github pages for free, and made the backend able to be run by anyone and swapped in the frontend easily. All served through cloudflare. So even if I disappear it's easy to run by anyone.}
 \end{customItemize}
 
 
-% --------- FRONTEND ARCHITECTURE ---------
-\company[Google-backed retail intelligence platform handling £100M+ in commerce]{NearSt}{London, United Kingdom}
-
-\role{Lead Frontend Architect}{May 2018}{Jul 2018}
-\begin{customItemize}
-   \achievement[React]{Developed a real-time dashboard with WebSocket live updates, supporting 3K+ concurrent retail connections}
-   \achievement[Architecture]{Built a modular component system and Storybook-driven design, scaling efficiently across product lines}
-   \achievement[GraphQL]{Designed a federated GraphQL layer to aggregate inventory, analytics, and sales data for 100K+ SKUs}
-\end{customItemize}
 
 
 \spacingsm
 
+
 % ------------------ Education ------------------ %
 \sectionHeading{Education}
 
-\education{Bachelor of Science Aerospace Engineering}{TU Delft}{2020 -- 2024}{Delft, Netherlands}{Minor in Computer Science}
-\education{Bachelor of Science Physics}{TU Delft}{2024 -- Present}{Delft, Netherlands}{Elemental Particle Physics Track}
+\education{Bachelor Marketing}{University of Delaware}{2012 -- 2016}{Delaware, USA}{Minor in German}
 
 \spacingsm
 
@@ -400,16 +375,17 @@
 
 \begin{minipage}[t]{0.55\textwidth}
     \begin{customItemize}
-        \engagement{RChain Conference -- Keynote Speaker}{}{Berlin, 2019}
-        \engagement{Blockchain Innovation Week -- Presenter}{}{The Hague, 2018}
-        \engagement{Internet of Agreements Conference -- Presenter}{}{London, 2018}
+        \engagement{Keynote 2016 (Blockchain) -- Keynote Speaker}{}{Burj al Arab Dubai, June 2016}
+        \engagement{TEDxYouth -- Presenter}{}{Sittard, 2017}
+        \engagement{North American Bitcoin Conference -- Presenter}{}{Miami, 2017}
+        \engagement{Internet of Agreements (Space) -- Presenter}{}{London, 2018}
     \end{customItemize}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.40\textwidth}
     \begin{customItemize}
-        \award{1st Prize Winner ADE Hackathon}{}{2017}
-        \award{Accenture's TNW Best 500 Under 26}{}{2017 -- 2024}
+        \award{Track 1st Place - Dutch Blockchain Hackaton}{}{2017}
+        \award{Track 2nd Place - Blockchain'gers Hackathon}{}{2019}
         \award{GitHub Arctic Code Vault Contributor}{}{2020}
     \end{customItemize}
 \end{minipage}
