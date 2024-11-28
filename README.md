@@ -17,3 +17,13 @@ built unique venues every few months
 used blender to design completely original venue designs. Filled with animations and triggers. Then used decentraland sdk 6 and then 7 to make them playable in decentraland
 - share some of my dev tools - rotater
  
+# LaTex stuff
+
+(instructions based on mac m1)
+
+`brew install --cask basictex`
+
+then install necessary latex packages
+`sudo tlmgr install geometry fontspec xcolor enumitem hyperref microtype calc ragged2e etoolbox xparse`
+
+then run `pnpm run latex`
