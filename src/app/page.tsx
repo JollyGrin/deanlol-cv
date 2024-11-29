@@ -48,6 +48,14 @@ export default function Home() {
           <SideProjects />
         </div>
       </div>
+
+      <div className="border-t-2 border-gray-600 max-w-[300px] w-full mx-auto my-8 py-4 flex justify-center">
+        <Link href="https://cv.dean.lol/cv.pdf" target="_blank">
+          <button className="bg-gray-900 py-4 px-8 rounded">
+            Download PDF
+          </button>
+        </Link>
+      </div>
     </main>
   );
 }
